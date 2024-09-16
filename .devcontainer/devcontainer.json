@@ -5,14 +5,15 @@
     "ghcr.io/devcontainers/features/sshd:1": {}
   },
   "postCreateCommand": { 
+    "install_tilt": "curl -fsSL https://raw.githubusercontent.com/tilt-dev/tilt/master/scripts/install.sh | bash" 
+  },
+  "postStartCommand": {
     "install_minikube": [
       "curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64",
       "&&",
       "sudo install minikube-linux-amd64 /usr/local/bin/minikube",
       "&&",
       "rm minikube-linux-amd64"
-    ],
-    "install_tilt": "curl -fsSL https://raw.githubusercontent.com/tilt-dev/tilt/master/scripts/install.sh | bash" 
-  },
-  "postStartComamnd": "minikube start"
+    ]
+  }
 }
